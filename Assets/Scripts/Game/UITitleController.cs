@@ -9,7 +9,7 @@ public class UITitleController : MonoBehaviour
     public GameObject fadeFX;
     public string startGameScene;
     public Animator _animatorFadeFX;
-    public Animator ship;
+    //public Animator ship;
 
     [SerializeField] private GameObject _continueBTN;
     private GameObject _player;
@@ -24,10 +24,15 @@ public class UITitleController : MonoBehaviour
         FadeOut();
         AudioManagerController.instance.PlayTitleTheme();
 
-        if(PlayerPrefs.HasKey("LastScene"))
+
+        if(_continueBTN != null)
         {
-            _continueBTN.SetActive(true);
+            if (PlayerPrefs.HasKey("LastScene"))
+            {
+                _continueBTN.SetActive(true);
+            }
         }
+       
     }
 
 
@@ -49,16 +54,33 @@ public class UITitleController : MonoBehaviour
     {
         //New game
         PlayerPrefs.DeleteAll();
-        StartCoroutine("StartTheGame");
+        SceneManager.LoadScene(startGameScene);
+        //StartCoroutine("StartTheGame");
+    }
 
+
+    public void TitleScreen()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 
 
     public void ContinueGame()
     {
-        //New game
         SceneManager.LoadScene(PlayerPrefs.GetString("LastScene"));
     }
+
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
 
     public void QuitGame()
     {
@@ -70,13 +92,13 @@ public class UITitleController : MonoBehaviour
 
     private IEnumerator StartTheGame()
     {
-        ship.SetTrigger("StartEngine");
+        //ship.SetTrigger("StartEngine");
 
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
 
-        ship.SetTrigger("GoGame");
+        //ship.SetTrigger("GoGame");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         SceneManager.LoadScene(startGameScene);
 
