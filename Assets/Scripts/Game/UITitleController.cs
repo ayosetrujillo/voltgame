@@ -22,8 +22,11 @@ public class UITitleController : MonoBehaviour
     private void Start()
     {
         FadeOut();
-        AudioManagerController.instance.PlayTitleTheme();
 
+        if(AudioManagerController.instance.titleMusic.isPlaying == false)
+        {
+            AudioManagerController.instance.PlayTitleTheme();
+        }
 
         if(_continueBTN != null)
         {

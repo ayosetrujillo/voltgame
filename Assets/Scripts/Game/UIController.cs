@@ -120,4 +120,11 @@ public class UIController : MonoBehaviour
     }
 
 
+    public void Options()
+    {
+        SceneManager.LoadSceneAsync("OptionsAdditive", LoadSceneMode.Additive);
+    }
+
+
+
 }
