@@ -217,6 +217,14 @@ public class PlayerController : MonoBehaviour
 
                 if (_playerRigid2D.velocity.x == 0) { playerIsMoving = false; }
 
+                if(lookR == false)
+                {
+                    _lowBatteryNotification.transform.localScale = new Vector3(-1f, 1f, 1f);
+                } else
+                {
+                    _lowBatteryNotification.transform.localScale = new Vector3(1f, 1f, 1f);
+                }
+
             }
 
             // Is Grounded
