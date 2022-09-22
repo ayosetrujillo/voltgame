@@ -2425,7 +2425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeFX: {fileID: 7504199716176645972}
-  startGameScene: Room0
+  startGameScene: RoomTutorial0
   _animatorFadeFX: {fileID: 7504199716176645976}
   _continueBTN: {fileID: 250946740}
 --- !u!1 &7504199717704974538
