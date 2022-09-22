@@ -9,6 +9,7 @@ public class EnemyPatroller : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
+    public Animator _animator;
 
     public float waitAPoints;
 
@@ -40,6 +41,7 @@ public class EnemyPatroller : MonoBehaviour
         // si la distancia entre el enemigo y el punto al que tiene que ir es mayor a 0.2
         if(Mathf.Abs(transform.position.x - patrolPoints[_currentPoint].position.x) > 0.2f)
         {
+            _animator.SetBool("Walking", true);
             //según donde esté el punto se mueve a izquierda o a derecha.
             if(transform.position.x < patrolPoints[_currentPoint].position.x)
             {
@@ -59,6 +61,7 @@ public class EnemyPatroller : MonoBehaviour
 
         } else {
 
+            _animator.SetBool("Walking", false);
             _enemyRigidbody.velocity = new Vector2(0f, _enemyRigidbody.velocity.y);
 
             _waitCounters -= Time.deltaTime;

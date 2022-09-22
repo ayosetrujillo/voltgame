@@ -41,6 +41,8 @@ public class DestructibleProps : MonoBehaviour
             //SFX
             //AudioManagerController.instance.PlaySFXPitch(13);
 
+            PlayerEnergyController.instance.AddEnergy(Random.Range(5, 15));
+
             Instantiate(breakEffect, transform.position, transform.rotation);
            // Instantiate(breakEffect2, transform.position, transform.rotation);
             GetComponent<SpriteRenderer>().enabled = false;

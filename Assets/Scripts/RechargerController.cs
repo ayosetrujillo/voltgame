@@ -11,7 +11,7 @@ public class RechargerController : MonoBehaviour
         {
             if(PlayerEnergyController.instance.currentEnergy < 100)
             {
-                PlayerEnergyController.instance.AddEnergy();
+                PlayerEnergyController.instance.AddEnergy(2);
             }
 
         }

@@ -123,6 +123,7 @@ MonoBehaviour:
   - {fileID: 4248303286937775228}
   moveSpeed: 5
   jumpForce: 10
+  _animator: {fileID: 4248303286606543440}
   waitAPoints: 1
 --- !u!114 &4248303286516743692
 MonoBehaviour:
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHP: 3
-  deathEffect: {fileID: 747775064667485896, guid: bdddf805aa49f4bacad81c4093d7ec02, type: 3}
+  deathEffect: {fileID: 6498298548348550331, guid: 2c2668f71b47c4e1994b8d98d8da5747, type: 3}
 --- !u!114 &284456175532503853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  kamikaze: 0
 --- !u!1 &4248303286606543453
 GameObject:
   m_ObjectHideFlags: 0

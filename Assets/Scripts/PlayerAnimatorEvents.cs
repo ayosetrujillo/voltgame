@@ -19,6 +19,6 @@ public class PlayerAnimatorEvents : MonoBehaviour
 
     public void RechargerEnergy()
     {
-        PlayerEnergyController.instance.AddEnergy();
+        PlayerEnergyController.instance.AddEnergy(1);
     } 
 }

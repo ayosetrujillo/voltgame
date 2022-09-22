@@ -15,6 +15,9 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject damageFX;
     public GameObject healFX;
 
+    public CameraController mainCamera;
+
+
     public bool playerIsDead = false;
 
     private SpriteRenderer _playerSprite;
@@ -38,8 +41,7 @@ public class PlayerHealthController : MonoBehaviour
 
     void Start()
     {
-
-
+       //mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     void Update()
@@ -55,10 +57,14 @@ public class PlayerHealthController : MonoBehaviour
         if (!inmunity)
         {
             inmunity = true;
-
             Debug.Log("INMUNITY");
-
             currentHP -= damage;
+
+
+            //ShakeCam
+            //StartCoroutine(mainCamera.Shake(0.2f, 0.2f));
+            
+
 
             //SFX
             AudioManagerController.instance.PlaySFXPitch(5);

@@ -32,4 +32,32 @@ public class CameraController : MonoBehaviour
         }
         
     }
+
+
+    public IEnumerator Shake(float duration, float magnitude)
+    {
+        Vector3 originalPos = transform.position;
+
+        float elapsedTime = 0.0f;
+
+        while (elapsedTime < duration)
+        {
+
+            Debug.Log("SAKE CAM");
+
+            float xOffset = Random.Range(-0.05f, 0.05f);
+            float yOffset = Random.Range(-0.05f, 0.05f);
+
+            transform.position = new Vector3(xOffset, yOffset, -10f);
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        transform.position = originalPos;
+    }
+
+
+
 }

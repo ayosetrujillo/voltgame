@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Weapons var
     public BulletController bulletPrefab;
     public BulletController bulletBigPrefab;
+    public GameObject failBulletPrefab;
     public Transform shootPoint;
 
     [Space(10)]
@@ -120,10 +121,16 @@ public class PlayerController : MonoBehaviour
         if (PlayerEnergyController.instance.currentEnergy >= _bonusLimit) {
 
             playerInTrance = true;
-            playerSprite.color = Color.green;
-            UIController.instance.iconEnergy.color = Color.green;
+            playerSprite.color = new Color(0.15f, 1f, 0.85f, 1f);  // Verde VOLT
+            UIController.instance.iconEnergy.color = new Color(0.1f, 1f, 0.8f, 1f);  // Verde VOLT
+        }
 
-        } else {
+        else if (PlayerHealthController.instance.inmunity == true) {
+            playerInTrance = false;
+            playerSprite.color = Color.red;
+            UIController.instance.iconEnergy.color = Color.white;
+        } else
+        {
             playerInTrance = false;
             playerSprite.color = Color.white;
             UIController.instance.iconEnergy.color = Color.white;
@@ -134,7 +141,6 @@ public class PlayerController : MonoBehaviour
         {
             playerIsLowBattery = true;
             _lowBatteryNotification.SetActive(true);
-
         }
         else
         {
@@ -264,7 +270,7 @@ public class PlayerController : MonoBehaviour
                             AudioManagerController.instance.PlaySFX(3);
 
                             //ENERGY
-                            PlayerEnergyController.instance.SpendEnergy(30);
+                            PlayerEnergyController.instance.SpendEnergy(20);
                         }
                     }
                     _playerRigid2D.velocity = new Vector2(_playerRigid2D.velocity.x, _playerJump);
@@ -274,38 +280,48 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Sin Energía para doble salto");
                 }
 
-
-
             }
 
             // Is Shooting
             if (Input.GetButtonDown("Fire1") && (!playerIsBall))
             {
-                if (PlayerEnergyController.instance.currentEnergy >= 10) {
 
+                if (PlayerEnergyController.instance.lowEnergy == false)
+                {
                     
-                    if(!playerInTrance)
+                    if (!playerInTrance)
                     {
                         Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation).bulletDir = new Vector2(transform.localScale.x, 0f);
-                    } else {
+
+                        //SFX
+                        AudioManagerController.instance.PlaySFX(8);
+                    }
+                    else
+                    {
                         //BIG BULLET
                         Instantiate(bulletBigPrefab, shootPoint.position, shootPoint.rotation).bulletDir = new Vector2(transform.localScale.x, 0f);
+
+                        //SFX
+                        AudioManagerController.instance.PlaySFX(18);
                     }
-
-                    playerIsShooting = true;
-
-                    PlayerEnergyController.instance.SpendEnergy(10);
-
-                    // SHOOT ANIMATION
-                    _playerAnimator.SetTrigger("isShoot");
-
-                    // SOUND
-                    AudioManagerController.instance.PlaySFX(8);
-                    playerIsAttacking = false;
-
-
+                } else
+                {
+                    Instantiate(failBulletPrefab, shootPoint.position, Quaternion.identity);
+                    //SFX
+                    AudioManagerController.instance.PlaySFX(17);
                 }
-            
+           
+
+                playerIsShooting = true;
+
+                PlayerEnergyController.instance.SpendEnergy(10);
+
+                // SHOOT ANIMATION
+                _playerAnimator.SetTrigger("isShoot");
+
+               
+                playerIsAttacking = false;
+
             }
 
             if(Input.GetButtonUp("Fire1"))
@@ -363,8 +379,6 @@ public class PlayerController : MonoBehaviour
                         //SFX
                         AudioManagerController.instance.PlaySFX(0);
 
-
-
                     } 
                 } else { //OFF
 
@@ -393,8 +407,6 @@ public class PlayerController : MonoBehaviour
                     
 
                 }
-
-
 
                 // Is Shooting BOMB!
                 if (Input.GetButtonDown("Fire1") && playerIsBall && _playerAbility.morphBall && _playerAbility.dropBombs)
@@ -425,7 +437,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
 
     public void DashEffect()
     {

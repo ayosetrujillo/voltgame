@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -8553134910930281927, guid: 92d7b4651018e452bb5da905d2f40879, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.44705883}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9372549}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb23976bad4dd446cb602b500b88f6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 8
+  _playerSpeed: 10
   _playerJump: 22
   _coyoteTime: 0.16
   _playerGroundCheck: {fileID: 376158309194882598}
@@ -189,6 +189,7 @@ MonoBehaviour:
   _lowBatteryNotification: {fileID: 4867793172667075940}
   bulletPrefab: {fileID: 7673080995237774848, guid: 090bfdd0aff594725bbb676776808ead, type: 3}
   bulletBigPrefab: {fileID: 7673080995237774848, guid: 32bacc858ba554957ba86a9a66671479, type: 3}
+  failBulletPrefab: {fileID: 2430432574056475398, guid: 5eeec5881e49d4cd4b80321935e1e2b7, type: 3}
   shootPoint: {fileID: 2670481645658723902}
   hitboxGameObject: {fileID: 4324616068250364573}
   dashTime: 0.2
@@ -251,6 +252,7 @@ MonoBehaviour:
   deathFX: {fileID: 747775064667485896, guid: bdddf805aa49f4bacad81c4093d7ec02, type: 3}
   damageFX: {fileID: 2430432574056475398, guid: 4814dee22f0c748e6994b7c02356010c, type: 3}
   healFX: {fileID: 2430432574056475398, guid: 17a3b4ce9aec841eb8da37cf7bb8b2ac, type: 3}
+  mainCamera: {fileID: 0}
   playerIsDead: 0
 --- !u!114 &8503192428093490834
 MonoBehaviour:

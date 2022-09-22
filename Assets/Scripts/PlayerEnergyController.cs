@@ -35,7 +35,7 @@ public class PlayerEnergyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -48,12 +48,12 @@ public class PlayerEnergyController : MonoBehaviour
         if (currentEnergy < shieldLimit)
         {
             lowEnergy = true;
-            shieldObject.SetActive(false);
+            //shieldObject.SetActive(false);
 
         } else {
 
             lowEnergy = false;
-            shieldObject.SetActive(true);
+            //shieldObject.SetActive(true);
 
         }
 
@@ -61,17 +61,19 @@ public class PlayerEnergyController : MonoBehaviour
         if (currentEnergy >= boostLimit)
         {
             boostEnergy = true;
+            shieldObject.SetActive(true);
         }
         else {
             boostEnergy = false;
+            shieldObject.SetActive(false);
         }
 
     }
 
 
-    public void AddEnergy()
+    public void AddEnergy(int amount)
     {
-        currentEnergy = currentEnergy + amountEnergy;
+        currentEnergy = currentEnergy + amount;
         UIController.instance.UpdateEnergy(currentEnergy);
 
     }
