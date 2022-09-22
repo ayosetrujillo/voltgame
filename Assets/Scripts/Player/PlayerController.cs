@@ -134,6 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             playerIsLowBattery = true;
             _lowBatteryNotification.SetActive(true);
+
         }
         else
         {
@@ -243,14 +244,12 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Jump") && (playerIsGrounded || playerCanDoubleJump || _timeInAir < _coyoteTime))
             {
 
-
-
-                if (PlayerEnergyController.instance.currentEnergy >= 5)
+                if (PlayerEnergyController.instance.currentEnergy >= 0)
                 {
                     //SFX
                     AudioManagerController.instance.PlaySFX(6);
 
-                    if (_playerAbility.doubleJump) // double jump ability check
+                    if (_playerAbility.doubleJump && PlayerEnergyController.instance.lowEnergy == false) // double jump ability check
                     {
                         if (playerIsGrounded)
                         {

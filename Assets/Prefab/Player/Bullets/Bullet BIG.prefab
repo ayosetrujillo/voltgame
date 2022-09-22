@@ -4995,4 +4995,4 @@ MonoBehaviour:
   bulletLifeTime: 1.2
   bulletDir: {x: 1, y: 0}
   bulletImpactFX: {fileID: 2430432574056475398, guid: 5eeec5881e49d4cd4b80321935e1e2b7, type: 3}
-  _bulletSpeed: 20
+  _bulletSpeed: 35

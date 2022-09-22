@@ -9,6 +9,12 @@ public class PlayerEnergyController : MonoBehaviour
 
     public int currentEnergy;
     public static PlayerEnergyController instance;
+    public bool lowEnergy;
+    public bool boostEnergy;
+    public float shieldLimit;
+    public float boostLimit;
+
+    public GameObject shieldObject;
 
     private void Awake()
     {
@@ -38,6 +44,27 @@ public class PlayerEnergyController : MonoBehaviour
 
         if (currentEnergy > 100) currentEnergy = 100;
         if (currentEnergy < 0) currentEnergy = 0;
+
+        if (currentEnergy < shieldLimit)
+        {
+            lowEnergy = true;
+            shieldObject.SetActive(false);
+
+        } else {
+
+            lowEnergy = false;
+            shieldObject.SetActive(true);
+
+        }
+
+
+        if (currentEnergy >= boostLimit)
+        {
+            boostEnergy = true;
+        }
+        else {
+            boostEnergy = false;
+        }
 
     }
 
