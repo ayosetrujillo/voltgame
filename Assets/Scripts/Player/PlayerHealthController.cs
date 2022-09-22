@@ -47,7 +47,7 @@ public class PlayerHealthController : MonoBehaviour
         UIController.instance.UpdateHP(currentHP, maxHP);
 
         //Debug damage
-        if (Input.GetKeyDown(KeyCode.P)) { AddDamage(1);  }
+        //if (Input.GetKeyDown(KeyCode.P)) { AddDamage(1);  }
     }
 
     public void AddDamage(int damage)

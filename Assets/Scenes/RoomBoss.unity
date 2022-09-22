@@ -20112,10 +20112,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1548886294563230239, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7504199716139919984, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -20204,14 +20200,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7504199716669129606, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199716669129607, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -37.200073
-      objectReference: {fileID: 0}
     - target: {fileID: 7504199716805412206, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -20219,34 +20207,6 @@ PrefabInstance:
     - target: {fileID: 7504199716805412206, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199716857575390, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199716857575390, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199716857575390, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199716857575390, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199716857575390, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199717309282368, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
-      objectReference: {fileID: 0}
-    - target: {fileID: 7504199717309282368, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.00012207031
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dda85666e48064cd6850693399020bfe, type: 3}

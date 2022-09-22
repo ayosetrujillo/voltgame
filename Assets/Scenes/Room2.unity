@@ -92976,33 +92976,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1548886294563230239, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2251161702785885233, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929830779972428143, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3697102829703655648, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3697102829703655648, guid: dda85666e48064cd6850693399020bfe, type: 3}
+    - target: {fileID: 675246788422615355, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5806987458734865890, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6695276816657539508, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_Name
-      value: PAUSE Title
       objectReference: {fileID: 0}
     - target: {fileID: 7504199716139919984, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_Name
@@ -93098,18 +93074,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504199716805412206, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7590626516953152716, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_Color.a
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7590626516953152716, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7590626516953152716, guid: dda85666e48064cd6850693399020bfe, type: 3}
-      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

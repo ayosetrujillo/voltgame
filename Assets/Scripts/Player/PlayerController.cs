@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (PlayerEnergyController.instance.currentEnergy <= 5)
+        if (PlayerEnergyController.instance.currentEnergy <= 10) // Min Energy
         {
             playerIsLowBattery = true;
             _lowBatteryNotification.SetActive(true);
@@ -155,11 +155,11 @@ public class PlayerController : MonoBehaviour
 
             // Player Dash
             if (_timerCoolDown == 0) {
-                if (Input.GetKeyDown(KeyCode.E) && !playerIsBall && _playerAbility.dash) { _dashCounter = dashTime; DashEffect(); }
+                if (Input.GetButtonDown("Dash") && !playerIsBall && _playerAbility.dash) { _dashCounter = dashTime; DashEffect(); }
             }
 
             // Player Energy Cure
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetButtonDown("Heal"))
             {
                 if(PlayerEnergyController.instance.currentEnergy >= 85)
                 {
@@ -320,7 +320,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            // MELEE ATTACK WITH BLADE
+            /* MELEE ATTACK WITH BLADE
 
             if (Input.GetButton("Fire2") && !playerIsAttacking)
             {
@@ -339,7 +339,7 @@ public class PlayerController : MonoBehaviour
                     playerIsJumping = false;
                     playerIsBall = false;
                 }
-            }
+            } */
 
 
 

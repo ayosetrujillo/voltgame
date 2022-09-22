@@ -22,7 +22,7 @@ public class BossHealthController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T)) { AddDamage(1);  }
+        //if(Input.GetKeyDown(KeyCode.T)) { AddDamage(1);  }
 
         hpBar.maxValue = maxHP;
         hpBar.value = currentHP;
