@@ -274,13 +274,14 @@ public class PlayerController : MonoBehaviour
             // Is Shooting
             if (Input.GetButtonDown("Fire1") && (!playerIsBall))
             {
-                if (PlayerEnergyController.instance.currentEnergy >= 5) {
+                if (PlayerEnergyController.instance.currentEnergy >= 10) {
 
                     
                     if(!playerInTrance)
                     {
                         Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation).bulletDir = new Vector2(transform.localScale.x, 0f);
                     } else {
+                        //BIG BULLET
                         Instantiate(bulletBigPrefab, shootPoint.position, shootPoint.rotation).bulletDir = new Vector2(transform.localScale.x, 0f);
                     }
 

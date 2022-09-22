@@ -93,7 +93,7 @@ MonoBehaviour:
   dashCoolDown: 1
   playerSprite: {fileID: 376158308840647786}
   afterImage: {fileID: 6650265298199030262, guid: 9aabf7685e9854493af44dd124bdff19, type: 3}
-  afterImageColor: {r: 0.33490568, g: 0.6313726, b: 0.88322765, a: 0.7294118}
+  afterImageColor: {r: 0.007843138, g: 0.9960785, b: 0.7843138, a: 1}
   afterImageLifetime: 0.5
   timeBetweenCopies: 0.03
   playerStandObject: {fileID: 376158308840647784}
