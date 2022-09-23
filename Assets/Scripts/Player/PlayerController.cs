@@ -548,6 +548,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    /* TEST AUTO CHANGE 
+
     public void ChangeToSurf()
     {
         //ON
@@ -580,7 +582,6 @@ public class PlayerController : MonoBehaviour
                 AudioManagerController.instance.PlaySFX(15);
             }
 
-        }
+        } */
 
-    }
 }

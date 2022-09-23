@@ -15,8 +15,6 @@ public class RadiactiveZoneController : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            _player.ChangeToSurf();
-
                //Surf
             if (_player.playerIsSurfing)
             {
