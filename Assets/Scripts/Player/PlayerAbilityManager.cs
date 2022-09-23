@@ -13,6 +13,7 @@ public class PlayerAbilityManager : MonoBehaviour
     public bool dash;
     public bool morphBall;
     public bool dropBombs;
+    public bool surf;
 
     private void Awake()
     {

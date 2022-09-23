@@ -11,6 +11,7 @@ public class AbilityDrop : MonoBehaviour
     public bool dash;
     public bool morphBall;
     public bool dropBombs;
+    public bool surf;
 
     [Header("Message")]
     public float messageTime;
@@ -35,6 +36,7 @@ public class AbilityDrop : MonoBehaviour
         if(((_playerAbilityManager.dash)        == true) && (dash           == true)) { Destroy(gameObject); }
         if(((_playerAbilityManager.morphBall)   == true) && (morphBall      == true)) { Destroy(gameObject); }
         if(((_playerAbilityManager.dropBombs)   == true) && (dropBombs      == true)) { Destroy(gameObject); }
+        if(((_playerAbilityManager.surf)        == true) && (surf           == true)) { Destroy(gameObject); }
 
     }
 
@@ -51,12 +53,14 @@ public class AbilityDrop : MonoBehaviour
             if (dash)       { _playerAbilityManager.dash        = true; Instantiate(_prefabDropFX, transform.position, Quaternion.identity); StartCoroutine("PrompMessageAndDestroy"); }
             if (morphBall)  { _playerAbilityManager.morphBall   = true; Instantiate(_prefabDropFX, transform.position, Quaternion.identity); StartCoroutine("PrompMessageAndDestroy"); }
             if (dropBombs)  { _playerAbilityManager.dropBombs   = true; Instantiate(_prefabDropFX, transform.position, Quaternion.identity); StartCoroutine("PrompMessageAndDestroy"); }
+            if (surf)       { _playerAbilityManager.surf        = true; Instantiate(_prefabDropFX, transform.position, Quaternion.identity); StartCoroutine("PrompCanvasAndDestroy");  }
 
             //Saving Player progress abilities
             if (_playerAbilityManager.doubleJump)   { PlayerPrefs.SetInt("doubleJump",  1); } else { PlayerPrefs.SetInt("doubleJump",   0); }
             if (_playerAbilityManager.dash)         { PlayerPrefs.SetInt("dash",        1); } else { PlayerPrefs.SetInt("dash",         0); }
             if (_playerAbilityManager.morphBall)    { PlayerPrefs.SetInt("morphBall",   1); } else { PlayerPrefs.SetInt("morphBall",    0); }
             if (_playerAbilityManager.dropBombs)    { PlayerPrefs.SetInt("dropBombs",   1); } else { PlayerPrefs.SetInt("dropBombs",    0); }
+            if (_playerAbilityManager.surf)         { PlayerPrefs.SetInt("surf",        1); } else { PlayerPrefs.SetInt("surf",         0); }
 
 
 
@@ -85,6 +89,27 @@ public class AbilityDrop : MonoBehaviour
         messageObject.SetActive(true);
         yield return new WaitForSeconds(messageTime);
         Destroy(gameObject);
+    }
+
+
+
+    IEnumerator PrompCanvasAndDestroy()
+    {
+        Collider2D _collider2D = GetComponent<Collider2D>();
+        SpriteRenderer _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _collider2D.enabled = false;
+        _spriteRenderer.enabled = false;
+        messageObject.SetActive(true);
+        yield return new WaitForSeconds(8);
+        Destroy(gameObject);
+    }
+
+    public void ClosePanel()
+    {
+        Debug.Log("Close Panel");
+        messageObject.SetActive(false);
+        Destroy(gameObject, 2f);
     }
 
 }

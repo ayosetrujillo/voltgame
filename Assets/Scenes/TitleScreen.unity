@@ -2501,9 +2501,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7504199717339716969}
     m_Modifications:
+    - target: {fileID: 8706737101726938460, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706737101726938461, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8706737102740128825, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
       propertyPath: m_Name
       value: TITLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706737102740128825, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8706737102740128830, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
       propertyPath: m_Pivot.x
@@ -2588,6 +2600,22 @@ PrefabInstance:
     - target: {fileID: 8706737102740128830, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706737103413953354, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706737103413953355, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706737103448143848, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706737103448143849, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0f6e315440a5421685713a80ec00bc6, type: 3}

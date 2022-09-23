@@ -65,6 +65,10 @@ public class AudioManagerController : MonoBehaviour
         soundFXList[soundPosition].Play();
     }
 
+    public void StopSFX( int soundPosition)
+    {
+        soundFXList[soundPosition].Stop();
+    }
 
 
 }

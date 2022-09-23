@@ -37,16 +37,20 @@ public class CheckpointController : MonoBehaviour
         {
             collision.GetComponentInParent<PlayerHealthController>().TotalCureHP();
 
-            isActive = true;
-
             //RespawnController.instance.SetNewRespawm(collision.transform.position);
             RespawnController.instance.SetNewCheckpoint(collision.transform.position);
-            //PlayerHealthController.instance.RefillHP();
+            
 
             _animator.SetBool("Check", true);
 
-            //SFX
-            AudioManagerController.instance.PlaySFX(16);
+            if (!isActive) {
+                //SFX
+                AudioManagerController.instance.PlaySFX(16);
+                PlayerHealthController.instance.TotalCureHP();
+                isActive = true;
+            }
+
+
 
             // Saving current progress //
             StartCoroutine("SaveProgress", _player.GetComponentInChildren<Collider2D>());
@@ -70,6 +74,7 @@ public class CheckpointController : MonoBehaviour
         if (playerAbility.dash)         { PlayerPrefs.SetInt("dash",        1); }    else    { PlayerPrefs.SetInt("dash",        0); }
         if (playerAbility.morphBall)    { PlayerPrefs.SetInt("morphBall",   1); }    else    { PlayerPrefs.SetInt("morphBall",   0); }
         if (playerAbility.dropBombs)    { PlayerPrefs.SetInt("dropBombs",   1); }    else    { PlayerPrefs.SetInt("dropBombs",   0); }
+        if (playerAbility.surf)         { PlayerPrefs.SetInt("surf",        1); }    else    { PlayerPrefs.SetInt("surf",        0); }
 
         yield return new WaitForSeconds(0.2f);
 
@@ -91,6 +96,7 @@ public class CheckpointController : MonoBehaviour
         if (PlayerPrefs.GetInt("dash")          == 1)   { playerAbility.dash        = true; } else { playerAbility.dash         = false; }
         if (PlayerPrefs.GetInt("morphBall")     == 1)   { playerAbility.morphBall   = true; } else { playerAbility.morphBall    = false; }
         if (PlayerPrefs.GetInt("dropBombs")     == 1)   { playerAbility.dropBombs   = true; } else { playerAbility.dropBombs    = false; }
+        if (PlayerPrefs.GetInt("surf")          == 1)   { playerAbility.surf        = true; } else { playerAbility.surf         = false; }
 
         // Boss Key
         if(PlayerPrefs.HasKey("HasBossKey"))

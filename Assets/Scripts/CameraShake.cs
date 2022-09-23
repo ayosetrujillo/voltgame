@@ -6,7 +6,7 @@ public class CameraShake : MonoBehaviour
 {
     private void Update()
     {
-        Debug.Log("POS CAM" + transform.position);
+       // Debug.Log("POS CAM" + transform.position);
     }
 
     public IEnumerator Shake(float duration, float magnitude)

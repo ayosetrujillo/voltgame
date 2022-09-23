@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _playerRigid2D;
     private Animator _playerAnimator;
     private Animator _playerBallAnimator;
+    private Animator _playerSurfAnimator;
     private PlayerAbilityManager _playerAbility;
 
     [Space(10)]
@@ -77,6 +78,14 @@ public class PlayerController : MonoBehaviour
     public BombController bombPrefab;
     [SerializeField] private GameObject _playerTubeCheck;
 
+
+    [Space(10)]
+    [Header("// SURF MODE //")]
+
+    // Surf Mode
+    public GameObject playerSurfObject;
+    public float speedTemp;
+
     [Space(5)]
 
     //Ball Weapon
@@ -92,6 +101,7 @@ public class PlayerController : MonoBehaviour
     public bool playerIsShooting;
     public bool playerIsDashing;
     public bool playerIsBall;
+    public bool playerIsSurfing;
     public bool playerIsAttacking;
     public bool playerCanDoubleJump;
     public bool playerInTube;
@@ -105,6 +115,7 @@ public class PlayerController : MonoBehaviour
         _playerAnimator = playerStandObject.GetComponentInChildren<Animator>();
         _hitboxAnimator = hitboxGameObject.GetComponentInChildren<Animator>();
         _playerBallAnimator = playerBallObject.GetComponent<Animator>();
+        _playerSurfAnimator = playerSurfObject.GetComponent<Animator>();
         _playerAbility = GetComponent<PlayerAbilityManager>();
 
         instance = this;
@@ -118,18 +129,21 @@ public class PlayerController : MonoBehaviour
         // PLAYER STATES:
 
 
-        if (PlayerEnergyController.instance.currentEnergy >= _bonusLimit) {
+        if (PlayerEnergyController.instance.currentEnergy >= _bonusLimit)
+        {
 
             playerInTrance = true;
-            playerSprite.color = new Color(0.15f, 1f, 0.85f, 1f);  // Verde VOLT
+            //playerSprite.color = new Color(0.15f, 1f, 0.85f, 1f);  // Verde VOLT
             UIController.instance.iconEnergy.color = new Color(0.1f, 1f, 0.8f, 1f);  // Verde VOLT
         }
 
-        else if (PlayerHealthController.instance.inmunity == true) {
+        else if (PlayerHealthController.instance.inmunity == true)
+        {
             playerInTrance = false;
             playerSprite.color = Color.red;
             UIController.instance.iconEnergy.color = Color.white;
-        } else
+        }
+        else
         {
             playerInTrance = false;
             playerSprite.color = Color.white;
@@ -151,24 +165,27 @@ public class PlayerController : MonoBehaviour
 
 
         // CAN'T MOVE PLAYER
-        if (!playerCanMove) {
+        if (!playerCanMove)
+        {
             //playerIsMoving = false;
             _playerRigid2D.velocity = Vector2.zero;
         }
 
 
         // CAN MOVE
-        if (playerCanMove) {
+        if (playerCanMove)
+        {
 
             // Player Dash
-            if (_timerCoolDown == 0) {
+            if (_timerCoolDown == 0)
+            {
                 if (Input.GetButtonDown("Dash") && !playerIsBall && _playerAbility.dash) { _dashCounter = dashTime; DashEffect(); }
             }
 
             // Player Energy Cure
             if (Input.GetButtonDown("Heal"))
             {
-                if(PlayerEnergyController.instance.currentEnergy >= 85)
+                if (PlayerEnergyController.instance.currentEnergy >= 85)
                 {
                     PlayerHealthController.instance.HealPlayer(5);
                     PlayerEnergyController.instance.SpendEnergy(100);
@@ -177,7 +194,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if ((_dashCounter > 0 ))
+            if ((_dashCounter > 0))
             {
                 playerIsDashing = true;
                 _dashCounter = _dashCounter - Time.deltaTime;
@@ -186,20 +203,25 @@ public class PlayerController : MonoBehaviour
 
                 //Dash Effect
                 _afterImageCounter -= Time.deltaTime;
-                if(_afterImageCounter <= 0)
+                if (_afterImageCounter <= 0)
                 {
                     DashEffect();
                 }
 
-            } else {
+            }
+            else
+            {
                 playerIsDashing = false;
                 _dashCounter = 0;
             }
 
             // Cooldowm Timer
-            if(_timerCoolDown > 0) {
+            if (_timerCoolDown > 0)
+            {
                 _timerCoolDown = _timerCoolDown - Time.deltaTime;
-            } else {
+            }
+            else
+            {
                 _timerCoolDown = 0;
             }
 
@@ -208,26 +230,28 @@ public class PlayerController : MonoBehaviour
             {
 
                 //Player In Trance
-                if(!playerInTrance)
+                if (!playerInTrance)
                 {
                     _playerRigid2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * _playerSpeed, _playerRigid2D.velocity.y);
-                } else
+                }
+                else
                 {
                     _playerRigid2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * _playerSpeed * 1.5f, _playerRigid2D.velocity.y);
                 }
-                
+
 
 
                 // Is Moving with flip
                 if (_playerRigid2D.velocity.x < 0) { playerIsMoving = true; transform.localScale = new Vector3(-1f, 1f, 1f); lookR = false; }
-                if (_playerRigid2D.velocity.x > 0) { playerIsMoving = true; transform.localScale = new Vector3(1f, 1f, 1f);  lookR = true; }
+                if (_playerRigid2D.velocity.x > 0) { playerIsMoving = true; transform.localScale = new Vector3(1f, 1f, 1f); lookR = true; }
 
                 if (_playerRigid2D.velocity.x == 0) { playerIsMoving = false; }
 
-                if(lookR == false)
+                if (lookR == false)
                 {
                     _lowBatteryNotification.transform.localScale = new Vector3(-1f, 1f, 1f);
-                } else
+                }
+                else
                 {
                     _lowBatteryNotification.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
@@ -241,7 +265,9 @@ public class PlayerController : MonoBehaviour
             if (playerIsGrounded)
             {
                 _timeInAir = 0;
-            } else {
+            }
+            else
+            {
                 _timeInAir += Time.deltaTime;
             }
 
@@ -275,7 +301,8 @@ public class PlayerController : MonoBehaviour
                     }
                     _playerRigid2D.velocity = new Vector2(_playerRigid2D.velocity.x, _playerJump);
                     playerIsJumping = true;
-                } else
+                }
+                else
                 {
                     Debug.Log("Sin Energía para doble salto");
                 }
@@ -288,7 +315,7 @@ public class PlayerController : MonoBehaviour
 
                 if (PlayerEnergyController.instance.lowEnergy == false)
                 {
-                    
+
                     if (!playerInTrance)
                     {
                         Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation).bulletDir = new Vector2(transform.localScale.x, 0f);
@@ -304,13 +331,14 @@ public class PlayerController : MonoBehaviour
                         //SFX
                         AudioManagerController.instance.PlaySFX(18);
                     }
-                } else
+                }
+                else
                 {
                     Instantiate(failBulletPrefab, shootPoint.position, Quaternion.identity);
                     //SFX
                     AudioManagerController.instance.PlaySFX(17);
                 }
-           
+
 
                 playerIsShooting = true;
 
@@ -319,12 +347,12 @@ public class PlayerController : MonoBehaviour
                 // SHOOT ANIMATION
                 _playerAnimator.SetTrigger("isShoot");
 
-               
+
                 playerIsAttacking = false;
 
             }
 
-            if(Input.GetButtonUp("Fire1"))
+            if (Input.GetButtonUp("Fire1"))
             {
                 playerIsShooting = false;
             }
@@ -360,27 +388,29 @@ public class PlayerController : MonoBehaviour
 
             // Ball Mode
 
-            if (_playerAbility.morphBall && (playerBallObject != null) && (playerBallObject != null))
+            if (_playerAbility.morphBall && !playerIsSurfing && (playerBallObject != null) && (playerBallObject != null))
             {
                 //ON
                 if (!playerBallObject.activeSelf)
                 {
 
-                    if(Input.GetAxisRaw("Vertical") < -0.9)
+                    if (Input.GetAxisRaw("Vertical") < -0.9)
                     {
                         playerStandObject.SetActive(false);
                         playerBallObject.SetActive(true);
                         playerIsBall = true;
 
-                        playerIsAttacking   = false;
+                        playerIsAttacking = false;
 
                         _playerTubeCheck.SetActive(false);
 
                         //SFX
                         AudioManagerController.instance.PlaySFX(0);
 
-                    } 
-                } else { //OFF
+                    }
+                }
+                else
+                { //OFF
 
                     //Comprobamos si hay techo.
                     _playerTubeCheck.SetActive(true);
@@ -404,7 +434,7 @@ public class PlayerController : MonoBehaviour
                         }
 
                     }
-                    
+
 
                 }
 
@@ -421,19 +451,83 @@ public class PlayerController : MonoBehaviour
                     playerIsShooting = false;
                 }
             }
+
+
+
+
+
+            // Surf Mode
+
+            if (_playerAbility.surf && !playerIsBall && (playerSurfObject != null) && (playerSurfObject != null))
+            {
+                //ON
+                if (!playerSurfObject.activeSelf)
+                {
+                    if (Input.GetAxisRaw("Vertical") > 0.9)
+                    {
+                        playerStandObject.SetActive(false);
+                        playerSurfObject.SetActive(true);
+                        playerIsSurfing = true;
+
+                        playerIsAttacking = false;
+
+                        //SFX
+                        AudioManagerController.instance.PlaySFX(0);
+
+                    }
+                }
+                else
+                { //OFF
+
+
+                    if (Input.GetAxisRaw("Vertical") < -0.9)
+                    {
+                        playerStandObject.SetActive(true);
+                        playerSurfObject.SetActive(false);
+                        playerIsSurfing = false;
+
+                        //SFX
+                        AudioManagerController.instance.PlaySFX(15);
+                    }
+
+
+                }
+
+                /* Is Shooting BOMB!
+                if (Input.GetButtonDown("Fire1") && playerIsBall && _playerAbility.morphBall && _playerAbility.dropBombs)
+                {
+                    Instantiate(bombPrefab, playerBallObject.transform.position, playerBallObject.transform.rotation);
+                    playerIsShooting = true;
+
+                }
+
+                if (Input.GetButtonUp("Fire1"))
+                {
+                    playerIsShooting = false;
+                } */
+            }
+
+
         }
 
         // BASIC PLAYER ANIMATIONS /////
 
-        if (!playerIsBall) {      
-            _playerAnimator.SetBool("isGrounded",   playerIsGrounded);
-            _playerAnimator.SetBool("isMoving",     playerIsMoving);
+        if (!playerIsBall)
+        {
+            _playerAnimator.SetBool("isGrounded", playerIsGrounded);
+            _playerAnimator.SetBool("isMoving", playerIsMoving);
         }
 
 
         if (playerIsBall)
         {
             _playerBallAnimator.SetBool("isBallMoving", playerIsMoving);
+        }
+
+
+        if (playerIsSurfing)
+        {
+            _playerSurfAnimator.SetBool("isSurfing", playerIsMoving);
         }
 
     }
@@ -452,5 +546,41 @@ public class PlayerController : MonoBehaviour
 
         _afterImageCounter = timeBetweenCopies;
     }
-    
+
+
+    public void ChangeToSurf()
+    {
+        //ON
+        if (!playerSurfObject.activeSelf)
+        {
+            if (Input.GetAxisRaw("Vertical") > 0.9)
+            {
+                playerStandObject.SetActive(false);
+                playerSurfObject.SetActive(true);
+                playerIsSurfing = true;
+
+                playerIsAttacking = false;
+
+                //SFX
+                AudioManagerController.instance.PlaySFX(0);
+
+            }
+        }
+        else
+        { //OFF
+
+
+            if (Input.GetAxisRaw("Vertical") < -0.9)
+            {
+                playerStandObject.SetActive(true);
+                playerSurfObject.SetActive(false);
+                playerIsSurfing = false;
+
+                //SFX
+                AudioManagerController.instance.PlaySFX(15);
+            }
+
+        }
+
+    }
 }
