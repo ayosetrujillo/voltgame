@@ -71,5 +71,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyEnemy Big Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4248303286516743692, guid: 49f6a7f05b6e24e1ab693a425ff64e00, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 6498298548348550331, guid: 2c2668f71b47c4e1994b8d98d8da5747, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f6a7f05b6e24e1ab693a425ff64e00, type: 3}

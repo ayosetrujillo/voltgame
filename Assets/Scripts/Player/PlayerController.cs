@@ -463,8 +463,8 @@ public class PlayerController : MonoBehaviour
                 //ON
                 if (!playerSurfObject.activeSelf)
                 {
-                    if (Input.GetAxisRaw("Vertical") > 0.9)
-                    {
+                    if (Input.GetButtonDown("Surf") && !playerIsSurfing) //(Input.GetAxisRaw("Vertical") > 0.9)
+                    { 
                         playerStandObject.SetActive(false);
                         playerSurfObject.SetActive(true);
                         playerIsSurfing = true;
@@ -472,7 +472,7 @@ public class PlayerController : MonoBehaviour
                         playerIsAttacking = false;
 
                         //SFX
-                        AudioManagerController.instance.PlaySFX(0);
+                        AudioManagerController.instance.PlaySFX(21);
 
                     }
                 }
@@ -480,14 +480,14 @@ public class PlayerController : MonoBehaviour
                 { //OFF
 
 
-                    if (Input.GetAxisRaw("Vertical") < -0.9)
+                    if (Input.GetButtonDown("Surf") && playerIsSurfing) //(Input.GetAxisRaw("Vertical") < -0.9)
                     {
                         playerStandObject.SetActive(true);
                         playerSurfObject.SetActive(false);
                         playerIsSurfing = false;
 
                         //SFX
-                        AudioManagerController.instance.PlaySFX(15);
+                        AudioManagerController.instance.PlaySFX(21);
                     }
 
 
