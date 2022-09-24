@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 3b881385f60894ff7805c07110033b6c
   - enabled: 1
-    path: Assets/Scenes/RoomTutorial0.unity
+    path: Assets/Scenes/CutScene0.unity
+    guid: fc353f6dafa6f4873b4a027025120b24
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
     guid: 50b61975e22d34a7fa9a0f5a72e56d35
   - enabled: 1
     path: Assets/Scenes/Room0.unity

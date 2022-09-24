@@ -8,7 +8,9 @@ public class UITitleController : MonoBehaviour
 {
     public GameObject fadeFX;
     public string startGameScene;
+    public string tutorialScene;
     public Animator _animatorFadeFX;
+    public bool playLogoSFX = true;
     //public Animator ship;
 
     [SerializeField] private GameObject _continueBTN;
@@ -26,7 +28,8 @@ public class UITitleController : MonoBehaviour
         if(AudioManagerController.instance.titleMusic.isPlaying == false)
         {
             //AudioManagerController.instance.PlayTitleTheme();
-            AudioManagerController.instance.PlaySFX(20);
+            if(playLogoSFX) { AudioManagerController.instance.PlaySFX(20);  }
+            
 
         }
 
@@ -61,6 +64,14 @@ public class UITitleController : MonoBehaviour
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(startGameScene);
         //StartCoroutine("StartTheGame");
+    }
+
+
+    public void Tutorial()
+    {
+        //New game
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(tutorialScene);
     }
 
 
