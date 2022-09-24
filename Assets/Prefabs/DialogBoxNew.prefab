@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4170161956847547801}
   - component: {fileID: 4170161956847547802}
   - component: {fileID: 4170161956847547803}
-  - component: {fileID: 1363985488}
+  - component: {fileID: 6157956059111613947}
   m_Layer: 5
-  m_Name: DialogBox
+  m_Name: DialogBoxNew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1363985488
+--- !u!114 &6157956059111613947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,16 +107,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4170161956847547806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef0092e6052845d2bd43a639879f7f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 27432587a29bf408899163b940e5ca29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4170161958716171293}
   lines:
+  - Hola
   - Hola Mundo.
-  - "Hola Mundo otra vez m\xE1s...."
-  - "y otra m\xE1s...."
   textSpeed: 0.02
-  trigger: {fileID: 0}
 --- !u!1 &4170161957032775798
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,15 +142,15 @@ RectTransform:
   m_GameObject: {fileID: 4170161957032775798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.74515, y: 0.74515, z: 0.74515}
   m_Children: []
   m_Father: {fileID: 4170161956847547805}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -309.4, y: 41}
-  m_SizeDelta: {x: 175, y: 250}
+  m_AnchoredPosition: {x: -232.9, y: 21.4}
+  m_SizeDelta: {x: 141.7749, y: 202.5356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4170161957032775795
 CanvasRenderer:
@@ -226,8 +224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 129.6612, y: 0.000045776367}
-  m_SizeDelta: {x: -259.3222, y: 0.00013733}
+  m_AnchoredPosition: {x: 69.6285, y: 5.681999}
+  m_SizeDelta: {x: -202.8091, y: -42.6141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4170161958716171292
 CanvasRenderer:
@@ -284,8 +282,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -320,7 +318,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.9935303, y: 45.834732, z: 53.072617, w: 43.773697}
+  m_margin: {x: -0.046935987, y: 18.84568, z: 16.140198, w: 1.1595306}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

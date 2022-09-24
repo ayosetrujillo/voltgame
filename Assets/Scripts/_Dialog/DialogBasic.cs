@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DialogueBasic : MonoBehaviour
+public class DialogBasic : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed = 0.02f;
-    public GameObject trigger;
 
     private Animator _animatorController;
     private int _index;
+    private GameObject _player;
 
     private void Awake()
     {
@@ -21,14 +21,17 @@ public class DialogueBasic : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        PlayerController.instance.playerCanMove = false;
-        PlayerController.instance.playerIsMoving = false;
 
         StartDialogue();
     }
 
     void Update()
     {
+        if(gameObject.activeSelf)
+        {
+            PlayerController.instance.playerCanMove = false;
+            PlayerController.instance.playerIsMoving = false;
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -59,11 +62,8 @@ public class DialogueBasic : MonoBehaviour
             _index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
-            
         } else {
             StartCoroutine("CloseDialog");
-            //Erase the trigger dialog.
-            trigger.SetActive(false);
         }
     }
 

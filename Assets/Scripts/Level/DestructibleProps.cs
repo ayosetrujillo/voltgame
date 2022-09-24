@@ -12,8 +12,7 @@ public class DestructibleProps : MonoBehaviour
     {
         if (collision.CompareTag("BullePlayer")) {
 
-            Debug.Log("" + collision.tag);
-
+           // Debug.Log("" + collision.tag);
             AddDamage(1);
         }
     }

@@ -55,6 +55,8 @@ public class AudioManagerController : MonoBehaviour
     {
         soundFXList[soundPosition].Stop();
         soundFXList[soundPosition].Play();
+        // soundFXList[soundPosition].PlayOneShot(soundFXList[soundPosition].clip);
+
     }
 
 

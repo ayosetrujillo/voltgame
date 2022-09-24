@@ -15,7 +15,6 @@ public class DoorController : MonoBehaviour
     public bool doorOpen;
     public Transform exitPoint;
     public float moveTowardSpeed;
-    public bool needKey;
 
     public string nextScene;
 
@@ -29,64 +28,31 @@ public class DoorController : MonoBehaviour
     void Update()
     {
 
-        if(needKey)
+        if (Vector3.Distance(transform.position, _player.transform.position) <= _distanceToOpen)
         {
+            doorOpen = true;
 
-            if (PlayerPrefs.HasKey("HasBossKey") && UIController.instance.hasBossKey) {
+            //SFX
+            AudioManagerController.instance.PlaySFX(22);
 
-
-                // DON'T NEED KEY, THE DOOR IS OPEN AUTOMATICALLY
-                if (Vector3.Distance(transform.position, _player.transform.position) <= _distanceToOpen)
-                {
-                    doorOpen = true;
-                }
-                else
-                {
-                    doorOpen = false;
-                }
-
-                if (_playerExiting)
-                {
-                    _player.transform.position = Vector2.MoveTowards(_player.transform.position, exitPoint.position, moveTowardSpeed * Time.deltaTime);
-                }
-
-                //Animation
-                _doorAnimator.SetBool("isOpen", doorOpen);
-
-
-            } else  { // THE PLAYER DON'T HAVE THE KEY
-
-                doorOpen = false;
-
-                //Animation
-                _doorAnimator.SetBool("isOpen", doorOpen);
-
-            }
-
-
-
-        } else { // DON'T NEED KEY, THE DOOR IS OPEN AUTOMATICALLY
-
-
-            if (Vector3.Distance(transform.position, _player.transform.position) <= _distanceToOpen)
-            {
-                doorOpen = true;
-            }
-            else
-            {
-                doorOpen = false;
-            }
-
-            if (_playerExiting)
-            {
-                _player.transform.position = Vector2.MoveTowards(_player.transform.position, exitPoint.position, moveTowardSpeed * Time.deltaTime);
-            }
-
-            //Animation
-            _doorAnimator.SetBool("isOpen", doorOpen);
-
+            Debug.Log("Suena Sonido");
         }
-        
+
+        else
+        {
+            doorOpen = false;
+
+            //SFX
+            AudioManagerController.instance.PlaySFX(22);
+        }
+
+        if (_playerExiting)
+        {
+            _player.transform.position = Vector2.MoveTowards(_player.transform.position, exitPoint.position, moveTowardSpeed * Time.deltaTime);
+        }
+
+        //Animation
+        _doorAnimator.SetBool("isOpen", doorOpen);
 
 
 
@@ -95,43 +61,15 @@ public class DoorController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-
-        if(needKey)
+        if (collision.CompareTag("Player"))
         {
-
-            if (UIController.instance.hasBossKey)
+            if (!_playerExiting)
             {
-                if (collision.CompareTag("Player"))
-                {
-                    if (!_playerExiting)
-                    {
-                        _player.playerCanMove = false;
+                _player.playerCanMove = false;
 
-                        StartCoroutine("UseDoor");
-                    }
-                }
+                StartCoroutine("UseDoor");
             }
-
-
-        } else {
-
-            if (collision.CompareTag("Player"))
-            {
-                if (!_playerExiting)
-                {
-                    _player.playerCanMove = false;
-
-                    StartCoroutine("UseDoor");
-                }
-            }
-
         }
-
-
-
-
-
-
 
     }
 
