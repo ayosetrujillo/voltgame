@@ -54,6 +54,7 @@ public class UIController : MonoBehaviour
             _player.transform.position = new Vector3(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), PlayerPrefs.GetFloat("PosZ"));
         }
 
+    
     }
 
 
