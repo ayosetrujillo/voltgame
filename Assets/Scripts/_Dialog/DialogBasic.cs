@@ -21,18 +21,12 @@ public class DialogBasic : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-
         StartDialogue();
     }
 
     void Update()
     {
-        if(gameObject.activeSelf)
-        {
-            PlayerController.instance.playerCanMove = false;
-            PlayerController.instance.playerIsMoving = false;
-        }
-
+ 
         if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[_index])
@@ -48,6 +42,8 @@ public class DialogBasic : MonoBehaviour
 
     void StartDialogue()
     {
+        PlayerController.instance.playerCanMove = false;
+        PlayerController.instance.playerIsMoving = false;
 
         _index = 0;
         AudioManagerController.instance.PlaySFX(23);

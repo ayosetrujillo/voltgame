@@ -76,6 +76,16 @@ public class CheckpointController : MonoBehaviour
         if (playerAbility.dropBombs)    { PlayerPrefs.SetInt("dropBombs",   1); }    else    { PlayerPrefs.SetInt("dropBombs",   0); }
         if (playerAbility.surf)         { PlayerPrefs.SetInt("surf",        1); }    else    { PlayerPrefs.SetInt("surf",        0); }
 
+
+        /*Player Keys
+
+        if (UIController.instance.hasKey1) { PlayerPrefs.SetInt("key1", 1); } else { PlayerPrefs.SetInt("key1", 0); }
+        if (UIController.instance.hasKey2) { PlayerPrefs.SetInt("key2", 1); } else { PlayerPrefs.SetInt("key2", 0); }
+        if (UIController.instance.hasKey3) { PlayerPrefs.SetInt("key3", 1); } else { PlayerPrefs.SetInt("key3", 0); }
+
+        if (UIController.instance.hasBossKey) { PlayerPrefs.SetInt("HasBossKey", 1); } else { PlayerPrefs.SetInt("HasBossKey", 0); } */
+
+
         yield return new WaitForSeconds(0.2f);
 
         Debug.Log("SAVE Completed");
@@ -98,13 +108,34 @@ public class CheckpointController : MonoBehaviour
         if (PlayerPrefs.GetInt("dropBombs")     == 1)   { playerAbility.dropBombs   = true; } else { playerAbility.dropBombs    = false; }
         if (PlayerPrefs.GetInt("surf")          == 1)   { playerAbility.surf        = true; } else { playerAbility.surf         = false; }
 
-        // Boss Key
+        /* Boss Key
         if(PlayerPrefs.HasKey("HasBossKey"))
         {
             UIController.instance.bossKey.SetActive(true);
             UIController.instance.hasBossKey = true;
         }
-        
+
+        // Key 1
+        if (PlayerPrefs.HasKey("key1"))
+        {
+            UIController.instance.key1.SetActive(true);
+            UIController.instance.hasKey1 = true;
+        }
+
+        // Key 2
+        if (PlayerPrefs.HasKey("key2"))
+        {
+            UIController.instance.key2.SetActive(true);
+            UIController.instance.hasKey2 = true;
+        }
+
+        // Key 3
+        if (PlayerPrefs.HasKey("key3"))
+        {
+            UIController.instance.key3.SetActive(true);
+            UIController.instance.hasKey3 = true;
+        } */
+
 
         yield return new WaitForSeconds(0.2f);
         Debug.Log("LOAD Completed");

@@ -5,17 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class DoorKeyController : MonoBehaviour
 {
-    [SerializeField] private float _distanceToOpen;
-    [SerializeField] private bool _playerExiting;
+
+    private float _distanceToOpen = 6f;
+    private bool _playerExiting;
     private PlayerController _player;
     private Animator _doorAnimator;
-   
+
+    public GameObject keyStopper;
+    public string keyName;
 
     // Door 
     public bool doorOpen;
-    public Transform exitPoint;
-    public float moveTowardSpeed;
-    public bool needKey;
+
+    [HideInInspector] public Transform exitPoint;
+    [HideInInspector] public float moveTowardSpeed;
+    
 
     public string nextScene;
 
@@ -25,56 +29,18 @@ public class DoorKeyController : MonoBehaviour
         _doorAnimator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if(needKey)
+        // KEY REQUIRED
+        if (PlayerPrefs.HasKey(keyName))
         {
+            keyStopper.SetActive(false);
 
-            if (PlayerPrefs.HasKey("HasBossKey") && UIController.instance.hasBossKey) {
-
-
-                // DON'T NEED KEY, THE DOOR IS OPEN AUTOMATICALLY
-                if (Vector3.Distance(transform.position, _player.transform.position) <= _distanceToOpen)
-                {
-                    doorOpen = true;
-                }
-                else
-                {
-                    doorOpen = false;
-                }
-
-                if (_playerExiting)
-                {
-                    _player.transform.position = Vector2.MoveTowards(_player.transform.position, exitPoint.position, moveTowardSpeed * Time.deltaTime);
-                }
-
-                //Animation
-                _doorAnimator.SetBool("isOpen", doorOpen);
-
-               
-
-
-            } else  { // THE PLAYER DON'T HAVE THE KEY
-
-                doorOpen = false;
-
-                //Animation
-                _doorAnimator.SetBool("isOpen", doorOpen);
-
-            }
-
-
-
-        } else { // DON'T NEED KEY, THE DOOR IS OPEN AUTOMATICALLY
-
-
+            // DON'T NEED KEY, THE DOOR IS OPEN AUTOMATICALLY
             if (Vector3.Distance(transform.position, _player.transform.position) <= _distanceToOpen)
             {
                 doorOpen = true;
             }
-
             else
             {
                 doorOpen = false;
@@ -88,15 +54,21 @@ public class DoorKeyController : MonoBehaviour
             //Animation
             _doorAnimator.SetBool("isOpen", doorOpen);
 
-            //SFX
-            if(!doorOpen)
-            {
-                AudioManagerController.instance.PlaySFX(22);
-            }
-            
+        }
+        else
+        { // THE PLAYER DON'T HAVE THE KEY
+
+            doorOpen = false;
+            keyStopper.SetActive(true);
+
+            //Animation
+            _doorAnimator.SetBool("isOpen", doorOpen);
+
+            //MSG
+            Debug.Log("NO TIENES LA LLAVE");
+
 
         }
-        
 
 
 
@@ -104,44 +76,19 @@ public class DoorKeyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
-        if(needKey)
+        if (UIController.instance.hasBossKey || UIController.instance.hasKey1 || UIController.instance.hasKey2 || UIController.instance.hasKey3)
         {
-
-            if (UIController.instance.hasBossKey)
-            {
-                if (collision.CompareTag("Player"))
-                {
-                    if (!_playerExiting)
-                    {
-                        _player.playerCanMove = false;
-
-                        StartCoroutine("UseDoor");
-                    }
-                }
-            }
-
-
-        } else {
-
+            keyStopper.SetActive(false);
+                
             if (collision.CompareTag("Player"))
             {
                 if (!_playerExiting)
                 {
                     _player.playerCanMove = false;
-
                     StartCoroutine("UseDoor");
                 }
             }
-
         }
-
-
-
-
-
-
 
     }
 

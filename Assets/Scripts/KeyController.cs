@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class KeyController : MonoBehaviour
 {
+    private string keyName;
+
+    public bool key1;
+    public bool key2;
+    public bool key3;
+    public bool bossKey;
+
     private void Start()
     {
-        if(PlayerPrefs.HasKey("HasBossKey"))
+        if(PlayerPrefs.HasKey(keyName))
         {
             Destroy(gameObject);
         }   
@@ -16,10 +23,13 @@ public class KeyController : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            UIController.instance.bossKey.SetActive(true);
-            UIController.instance.hasBossKey = true;
+            if(key1) { UIController.instance.key1.SetActive(true); UIController.instance.hasKey1 = true; }
+            if(key2) { UIController.instance.key2.SetActive(true); UIController.instance.hasKey2 = true; }
+            if(key3) { UIController.instance.key3.SetActive(true); UIController.instance.hasKey3 = true; }
 
-            PlayerPrefs.SetInt("HasBossKey", 1);
+            if(bossKey) { UIController.instance.bossKey.SetActive(true); UIController.instance.hasBossKey = true; }
+
+            PlayerPrefs.SetInt(keyName, 1);
 
             Destroy(gameObject);
         }

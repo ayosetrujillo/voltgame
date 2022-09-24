@@ -19,7 +19,14 @@ public class UIController : MonoBehaviour
 
     //Key
     public bool hasBossKey;
+    public bool hasKey1;
+    public bool hasKey2;
+    public bool hasKey3;
+
     public GameObject bossKey;
+    public GameObject key1;
+    public GameObject key2;
+    public GameObject key3;
 
     public string titleScreenScene;
 
@@ -87,8 +94,6 @@ public class UIController : MonoBehaviour
     }
 
 
-
-
     // BTN ACTIONS
 
     public void PauseGame()
@@ -119,13 +124,5 @@ public class UIController : MonoBehaviour
         Application.Quit();
         Debug.Log("QUIT GAME");
     }
-
-
-    public void Options()
-    {
-        SceneManager.LoadSceneAsync("OptionsAdditive", LoadSceneMode.Additive);
-    }
-
-
 
 }

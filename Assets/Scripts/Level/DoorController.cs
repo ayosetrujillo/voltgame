@@ -35,7 +35,7 @@ public class DoorController : MonoBehaviour
             //SFX
             AudioManagerController.instance.PlaySFX(22);
 
-            Debug.Log("Suena Sonido");
+            //Debug.Log("Suena Sonido");
         }
 
         else
