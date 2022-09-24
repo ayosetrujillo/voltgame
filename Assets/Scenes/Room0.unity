@@ -331,6 +331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 429a0f94342e14fdc92d499bd9015de9, type: 3}
+--- !u!1 &75286346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4978170062054782008, guid: dda85666e48064cd6850693399020bfe, type: 3}
+  m_PrefabInstance: {fileID: 1334163221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &81998026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,11 +1050,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8904986006416283611, guid: 65ce1d1f4cca449f881d6a0fc90160a4, type: 3}
       propertyPath: needKey
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8904986006416283611, guid: 65ce1d1f4cca449f881d6a0fc90160a4, type: 3}
       propertyPath: nextScene
-      value: RoomTutorial0
+      value: Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904986007530080129, guid: 65ce1d1f4cca449f881d6a0fc90160a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65ce1d1f4cca449f881d6a0fc90160a4, type: 3}
@@ -16731,6 +16740,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4143211607572670322, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978170062054782008, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096014982792684755, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 495.861
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096014982792684755, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 147.931
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752164985757545048, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: m_text
+      value: MEMORIA FRAGMENTADA
+      objectReference: {fileID: 0}
     - target: {fileID: 7355395702288257984, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16823,6 +16852,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7504199716139919999, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: titleZone
+      value: 
+      objectReference: {fileID: 75286346}
     - target: {fileID: 7504199716805412206, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
