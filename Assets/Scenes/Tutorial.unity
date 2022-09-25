@@ -12724,11 +12724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
       propertyPath: lines.Array.data[2]
-      value: "T\xF3malo como una formaci\xF3n especial."
+      value: "espero que as\xED podamos entenderns mejor."
       objectReference: {fileID: 0}
     - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
       propertyPath: lines.Array.data[3]
-      value: "y permanece atento, a pr\xF3ximas instrucciones."
+      value: puede me he haya dejado algo en el tintero.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02a25619c1264e33a4045258fd1918b, type: 3}

@@ -58817,7 +58817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
       propertyPath: lines.Array.data[3]
-      value: Gracias.
+      value: Gracias por jugar.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
