@@ -27,7 +27,7 @@ public class UITitleController : MonoBehaviour
 
         if(AudioManagerController.instance.titleMusic.isPlaying == false)
         {
-            //AudioManagerController.instance.PlayTitleTheme();
+            AudioManagerController.instance.PlayTitleTheme();
             if(playLogoSFX) { AudioManagerController.instance.PlaySFX(20);  }
             
 

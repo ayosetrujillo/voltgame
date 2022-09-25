@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHP: 5
-  deathEffect: {fileID: 747775064667485896, guid: bdddf805aa49f4bacad81c4093d7ec02, type: 3}
+  deathEffect: {fileID: 6498298548348550331, guid: 2c2668f71b47c4e1994b8d98d8da5747, type: 3}
 --- !u!114 &284456175532503853
 MonoBehaviour:
   m_ObjectHideFlags: 0

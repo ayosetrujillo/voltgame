@@ -296,7 +296,7 @@ public class PlayerController : MonoBehaviour
                             AudioManagerController.instance.PlaySFX(3);
 
                             //ENERGY
-                            PlayerEnergyController.instance.SpendEnergy(20);
+                            PlayerEnergyController.instance.SpendEnergy(18);
                         }
                     }
                     _playerRigid2D.velocity = new Vector2(_playerRigid2D.velocity.x, _playerJump);
@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
 
                 playerIsShooting = true;
 
-                PlayerEnergyController.instance.SpendEnergy(10);
+                PlayerEnergyController.instance.SpendEnergy(7);
 
                 // SHOOT ANIMATION
                 _playerAnimator.SetTrigger("isShoot");
