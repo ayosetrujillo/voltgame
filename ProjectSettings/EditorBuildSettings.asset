@@ -15,8 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 50b61975e22d34a7fa9a0f5a72e56d35
   - enabled: 1
-    path: Assets/Scenes/Room0.unity
+    path: Assets/Scenes/_old/Room0original.unity
     guid: b3df02ddc71cc4c94b6b65619a0f38fa
+  - enabled: 1
+    path: Assets/Scenes/Room0.unity
+    guid: 5c457f6f3bba8410cb805bc4578e1825
   - enabled: 1
     path: Assets/Scenes/Room1.unity
     guid: 48715dd742f574034809927c4fa252a1
@@ -24,15 +27,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Room2.unity
     guid: 537b7989c9abf40a28af16fb3403088f
   - enabled: 1
-    path: Assets/Scenes/Room2Key.unity
+    path: Assets/Scenes/Room3.unity
     guid: 4c2c640b29980408785252da1d32affd
   - enabled: 1
-    path: Assets/Scenes/RoomBoss.unity
-    guid: d1c0eba01d4da4600bb96a4c3413026c
+    path: Assets/Scenes/Room4.unity
+    guid: 6e271ba02c6ce43a9a81319b5357353b
+  - enabled: 1
+    path: Assets/Scenes/Room5.unity
+    guid: a969319af6a0b4f5fb7c7e02f7c9ff5a
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 0b12cbb9232604801a497a8aa783a8e2
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 8eedaad49bcf046f496676fbea727e33
+  - enabled: 1
+    path: Assets/Scenes/RoomBoss.unity
+    guid: 30c8da369b3f64251bdf3b278187a0cb
   m_configObjects: {}
