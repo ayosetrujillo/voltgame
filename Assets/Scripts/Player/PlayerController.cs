@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
 
                 playerIsShooting = true;
 
-                PlayerEnergyController.instance.SpendEnergy(7);
+                PlayerEnergyController.instance.SpendEnergy(6);
 
                 // SHOOT ANIMATION
                 _playerAnimator.SetTrigger("isShoot");
