@@ -293,12 +293,20 @@ PrefabInstance:
       value: "Vale Jefe. Har\xE9 la formaci\xF3n completa."
       objectReference: {fileID: 0}
     - target: {fileID: 7169140251565713120, guid: ce6c508ed485547a1a46c619e4f31d10, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7169140251565713120, guid: ce6c508ed485547a1a46c619e4f31d10, type: 3}
       propertyPath: m_Name
       value: DialogWithTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 7169140251565713120, guid: ce6c508ed485547a1a46c619e4f31d10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7169140251565713122, guid: ce6c508ed485547a1a46c619e4f31d10, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7169140251565713122, guid: ce6c508ed485547a1a46c619e4f31d10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -684,7 +692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4103992238283366699, guid: 24cf946b964ea4d63a0d03828cdea049, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: -1.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24cf946b964ea4d63a0d03828cdea049, type: 3}
@@ -1505,7 +1513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7169140251565713122, guid: ce6c508ed485547a1a46c619e4f31d10, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 7169140251565713122, guid: ce6c508ed485547a1a46c619e4f31d10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10528,6 +10536,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 408897234958312981, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 675246788422615355, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10679,6 +10691,10 @@ PrefabInstance:
     - target: {fileID: 7504199716805412206, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504199717309282368, guid: dda85666e48064cd6850693399020bfe, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7737196281224012101, guid: dda85666e48064cd6850693399020bfe, type: 3}
       propertyPath: m_RootOrder
@@ -12639,6 +12655,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc9589bb8b924e65874869b550f235b, type: 3}
+--- !u!1001 &2001880447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3225292381789581824, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 3225292381789581824, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_Name
+      value: DialogWithTrigger Anonimo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -254.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9685407
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: Rio... como puedes ver...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: Te he preparado unas explicaciones
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: "T\xF3malo como una formaci\xF3n especial."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: "y permanece atento, a pr\xF3ximas instrucciones."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
 --- !u!1 &2009281325
 GameObject:
   m_ObjectHideFlags: 0
