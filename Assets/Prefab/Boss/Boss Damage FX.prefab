@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.34901962, g: 0, b: 0.20461845, a: 1}
-      maxColor: {r: 0.92549026, g: 0.08627451, b: 0.33333334, a: 0.4627451}
+      minColor: {r: 0.553, g: 0, b: 0.11144286, a: 1}
+      maxColor: {r: 0.9528302, g: 0.06741722, b: 0.20249857, a: 0.4627451}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4834,9 +4834,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1506507297
+  m_SortingLayer: 1
+  m_SortingOrder: 8
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

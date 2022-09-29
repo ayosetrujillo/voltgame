@@ -892,8 +892,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0026245117, y: -1.2373683}
-  m_Size: {x: 1.8666992, y: 5.1000648}
+  m_Offset: {x: -0.070129395, y: 0.05873561}
+  m_Size: {x: 1.6241455, y: 3.532638}
   m_Direction: 0
 --- !u!1 &530182284
 GameObject:
@@ -28380,11 +28380,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 536.76
+      value: 542.91
       objectReference: {fileID: 0}
     - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.68
+      value: 5.13
       objectReference: {fileID: 0}
     - target: {fileID: 3225292381789581826, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28418,14 +28418,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3225292381789581827, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
-      propertyPath: m_Radius
-      value: 1.0057933
-      objectReference: {fileID: 0}
-    - target: {fileID: 3225292381789581827, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.000009536743
-      objectReference: {fileID: 0}
     - target: {fileID: 7083770069338706580, guid: e02a25619c1264e33a4045258fd1918b, type: 3}
       propertyPath: lines.Array.size
       value: 3
@@ -28457,7 +28449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2438385703284785125, guid: cdc9589bb8b924e65874869b550f235b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 541.76
+      value: 538.5056
       objectReference: {fileID: 0}
     - target: {fileID: 2438385703284785125, guid: cdc9589bb8b924e65874869b550f235b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29104,10 +29096,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1506507297
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1247767482652142737, guid: 3ca88c1cbef8b405d889d784b6da9d58, type: 3}
+  m_Sprite: {fileID: -3858331487878545982, guid: 9df4e92c959197f4b917e20604efc418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

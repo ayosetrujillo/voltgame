@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManagerController : MonoBehaviour
 {
     public static AudioManagerController instance;
-    public AudioSource titleMusic, mainMusic, bossMusic;
+    public AudioSource titleMusic, mainMusic, bossMusic, finalTheme;
     public AudioSource[] soundFXList;
 
     public void Awake()
@@ -24,6 +24,7 @@ public class AudioManagerController : MonoBehaviour
         titleMusic.Play();
         mainMusic.Stop();
         bossMusic.Stop();
+        finalTheme.Stop();
     }
 
     public void PlayMainTheme()
@@ -31,7 +32,7 @@ public class AudioManagerController : MonoBehaviour
         titleMusic.Stop();
         mainMusic.Play();
         bossMusic.Stop();
-
+        finalTheme.Stop();
     }
 
     public void PlayBossTheme()
@@ -39,14 +40,26 @@ public class AudioManagerController : MonoBehaviour
         titleMusic.Stop();
         mainMusic.Stop();
         bossMusic.Play();
+        finalTheme.Stop();
+    }
+
+    public void PlayFinalTheme()
+    {
+        titleMusic.Stop();
+        mainMusic.Stop();
+        bossMusic.Stop();
+        finalTheme.Play();
 
     }
+
+
 
     public void StopAllMusic()
     {
         titleMusic.Stop();
         mainMusic.Stop();
         bossMusic.Stop();
+        finalTheme.Stop();
     }
 
     // SOUND FX PLAYER

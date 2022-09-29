@@ -13,6 +13,8 @@ public class DialogBasic : MonoBehaviour
     private int _index;
     private GameObject _player;
 
+    public bool dialogIsComplete;
+
     private void Awake()
     {
         _animatorController = GetComponent<Animator>();
@@ -21,6 +23,9 @@ public class DialogBasic : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
+
+        dialogIsComplete = false;
+
         StartDialogue();
     }
 
@@ -59,6 +64,8 @@ public class DialogBasic : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         } else {
+
+            dialogIsComplete = true;
             StartCoroutine("CloseDialog");
         }
     }
