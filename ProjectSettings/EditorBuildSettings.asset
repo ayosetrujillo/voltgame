@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoomBoss.unity
     guid: 30c8da369b3f64251bdf3b278187a0cb
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: b32f198dab7ea467e949051d516afd5b
   m_configObjects: {}
